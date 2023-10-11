@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "codigoInstrutor", scope=Instrutor.class)
@@ -26,8 +27,8 @@ public class Instrutor {
 	@Column(name = "nome")
 	private String nome;
 	
-//	@OneToOne(mappedBy = "instrutor")
-//	private Telefone telefone;
+	@OneToOne(mappedBy = "instrutor")
+	private Telefone telefone;
 	
 	// colocar 1:n de instrutor p/ turma, fazer um list
 	
@@ -55,12 +56,12 @@ public class Instrutor {
 		this.nome = nome;
 	}
 
-//	public Telefone getTelefone() {
-//		return telefone;
-//	}
-//
-//	public void setTelefone(Telefone telefone) {
-//		this.telefone = telefone;
-//	}
+	public Telefone getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
+	}
 	
 }
