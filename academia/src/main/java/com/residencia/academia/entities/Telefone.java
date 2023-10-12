@@ -22,10 +22,10 @@ public class Telefone {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigotelefone")
 	private Integer codigoTelefone;
-
-	@OneToOne
-	@JoinColumn(name = "codigoinstrutor", referencedColumnName = "codigoinstrutor")
-	private Instrutor instrutor;
+	
+    @OneToOne(optional = false)
+    @JoinColumn(name = "codigoinstrutor", referencedColumnName = "codigoinstrutor", unique = true)
+    private Instrutor instrutor;
 
 	@Column(name = "numero")
 	private Long numero;
