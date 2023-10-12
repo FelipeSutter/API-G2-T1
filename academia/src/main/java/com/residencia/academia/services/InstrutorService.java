@@ -20,7 +20,7 @@ public class InstrutorService {
 	@Autowired
 	InstrutorRepository instrutorRepo;
 
-	public List<Instrutor> listarInstrutors() {
+	public List<Instrutor> listarInstrutores() {
 		return instrutorRepo.findAll();
 	}
 
